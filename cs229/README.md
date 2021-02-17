@@ -1,4 +1,4 @@
-# cs229
+# CS229
 
 [Stanford Course Home](https://see.stanford.edu/Course/CS229)
 
@@ -8,3 +8,7 @@
 ## Problem Sets
 
 - https://see.stanford.edu/materials/aimlcs229/problemset1.pdf
+
+## Misc Resources
+
+- https://github.com/SanJJ1/cs229self-study
