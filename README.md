@@ -1,17 +1,12 @@
-# cs229
+# Stanford cs229
 
 My self-study repo for Stanford CS229
 
-There are actually three different classes: CS229a, CS229, and CS229t
+There are actually three different classes:
 
-The Coursera Andrew Ng class.  CS229a
-
-The actual Stanford class, which has more math and theory.
-
-[2008 Videos]
-[2018 Videos]
-
-CS229T, which has a lot of math.
+- CS229a - The Coursera Andrew Ng class, and ...
+- CS229  - A version with more math and theory.
+- CS229T - Even more math.
 
 I've create 3 separate subdirectories, one for each class.
 
