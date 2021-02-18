@@ -14,9 +14,9 @@ J = 0;
 %               You should set J to the cost.
 
  	h_theta = X*theta;
-    h_minus_y_squared   = (h_theta - y).^2;
-    sum_sq = sum(h_minus_y_squared);
-    denom = 2*m;
+   h_minus_y_squared   = (h_theta - y).^2;
+   sum_sq = sum(h_minus_y_squared);
+   denom = 2*m;
    J = sum(h_minus_y_squared) / denom;
 
 % =========================================================================

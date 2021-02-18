@@ -1,5 +1,3 @@
-mmellinger66@gmail.com
-XuoH25hdQRERKiA4
 
 cd '/Users/melling/Dropbox/dev/machine_learning/ng/machine-learning-ex1/ex1'
 pwd
