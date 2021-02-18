@@ -23,3 +23,10 @@ x = sigmoid(5);
 ## ex2/costFunction.m
 
 ## 
+
+## Local Functions in Octave
+
+Are different in Matlab and Octave
+
+- https://stackoverflow.com/questions/50404236/error-when-running-simple-script-containing-local-function-in-octave
+

@@ -3,6 +3,11 @@ function [theta, J_history] = gradientDescent(X, y, theta, alpha, num_iters)
 %   theta = GRADIENTDESCENT(X, y, theta, alpha, num_iters) updates theta by 
 %   taking num_iters gradient steps with learning rate alpha
 
+% Notes:
+
+% Tutorial: https://www.coursera.org/learn/machine-learning/discussions/all/threads/-m2ng_KQEeSUBCIAC9QURQ
+% Test Cases: https://www.coursera.org/learn/machine-learning/discussions/all/threads/5wftpZnyEeWKNwpBrKr_Fw
+
 % Initialize some useful values
 m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);
@@ -17,18 +22,15 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-
-
     x = X(:,2);
     cost = theta(1) + (theta(2)*x); % theta0 + theta1 * x
 
-    partial_ans = cost-y
+    partial_ans = cost - y
 
     theta0 = theta(1) - alpha * (1/m) * sum(partial_ans)
     theta1  = theta(2) - alpha * (1/m) * sum(partial_ans .* x)
 
     theta = [theta0; theta1]
-
 
 
     % ============================================================
@@ -37,5 +39,7 @@ for iter = 1:num_iters
     J_history(iter) = computeCost(X, y, theta);
 
 end
-
+    fprintf("\nJ_history ===\n")
+%    J_history(1:10,:)
+    J_history((end - 10):end,:) % Last 10 rows
 end

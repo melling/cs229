@@ -13,11 +13,11 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
- 	h_theta = X*theta;
-   h_minus_y_squared   = (h_theta - y).^2;
-   sum_sq = sum(h_minus_y_squared);
-   denom = 2*m;
-   J = sum(h_minus_y_squared) / denom;
+	h_theta = X * theta;
+	h_minus_y_squared = (h_theta - y).^2;
+%	sum_sq = sum(h_minus_y_squared);
+%	denom = 2*m;
+	J = sum(h_minus_y_squared) / 2*m;
 
 % =========================================================================
 
