@@ -21,8 +21,10 @@ J = 0;
 	h_theta = X * theta; % hypothesis vector
 	errors = h_theta - y;
 	errors_squared = (errors).^2;
+	
 	% sum_sq = sum(errors_squared);
 	% denom = 2*m;
+
 	J = sum(errors_squared) / (2*m);
 
 
