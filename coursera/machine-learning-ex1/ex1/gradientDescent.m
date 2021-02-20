@@ -24,11 +24,11 @@ for iter = 1:num_iters
 
     x = X(:,2); % Get column 2
 %    cost = theta(1) + (theta(2)*x); % theta0 + theta1 * x
-    cost = X * theta
-    partial_ans = cost - y;
+    h_theta = X * theta % hypothesis vector h_theta is cost fn
+    errors = h_theta - y;
 
-    theta0 = theta(1) - alpha * (1/m) * sum(partial_ans);
-    theta1  = theta(2) - alpha * (1/m) * sum(partial_ans .* x);
+    theta0 = theta(1) - alpha * (1/m) * sum(errors);
+    theta1  = theta(2) - alpha * (1/m) * sum(errors .* x);
 
     theta = [theta0; theta1];
 

@@ -39,14 +39,18 @@ $J(\theta)$ turns out to be a quadratic function - sum of squares terms
 - @37 If cost function starts increasing, sign that learning rate is too large
 
 @41 It’s also called Batch Gradient Descent
+
 Look at all m examples, 49 here
+
 Look at the **entire batch**
 
 ## Stochastic Gradient Descent
+
 @45
 
 Just fit once house instead of them all at once
-Much faster
+
+Much faster technique
 
 @47 Never quite converges
 
@@ -54,9 +58,10 @@ Much faster
 
 @50 what’s common is to slowly decrease the learning rate over time. Size of oscillations will decrease. 
 
-@53 With linear Regression it’s possible to jump to the optimal value of the parameters theta in 1 step. Only linear Regression
+@53 With linear regression it’s possible to jump to the optimal value of the parameters theta in 1 step. Only linear regression
 
 @56m the notation to make derivation easier 
+
 Definition of a Matrix derivative
 
 @1:03:50 For square matrix A, the *trace* of A is the sum of the diagonals 
@@ -65,19 +70,19 @@ Tr A
 Tr A = Tr A transposed o
 
 - @1:05 f(A) = tr AB
+- tr ABC = tr CAB - can always move one matrix from end to beginning 
 - @1:06 tr AB = tr BA
-- tr ABC = tr CAB - always move 1 from end to beginning 
 
-@1:08 Express $J(\theta)$ in our matrix notation 
+@1:08:00 Express $J(\theta)$ in our matrix notation 
 
 Capital X is called the Design Matrix
 
-@1:12 Z^TZ = sum Z^2
+@1:12:00 Z^TZ = sum $Z^2$
 
 ## The Normal Equations
 
-@1:16 The normal equations
+@1:16:00 The normal equations
 
 Can now in one step get the value of theta that corresponds to the global minimum 
 
-@1:17 If theta is not invertible use pseudo inverse or remove linearly dependent features. 
+@1:17:00 If theta is not invertable use pseudo inverse or remove linearly dependent features. 

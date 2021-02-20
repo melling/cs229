@@ -26,16 +26,22 @@ for iter = 1:num_iters
 %   so the product is (m x 1). That's good, because 
 %   it's the same size as 'y'. Call this hypothesis vector 'h'.
 
+    h_theta = X * theta % hypothesis vector h_theta is cost fn
 
 
 % 2 - The "errors vector" is the difference between the 'h' vector 
 % and the 'y' vector.
+
+    errors = h_theta - y;
 
 %  3 - The change in theta (the "gradient") is the sum of the product of X 
 %  and the "errors vector", scaled by alpha and 1/m. Since X is (m x n),
 %  and the error vector is (m x 1), and the result you want is the 
 %  same size as theta (which is (n x 1), you need to transpose X 
 %  before you can multiply it by the error vector.
+
+    XT = X'
+    theta_change = XT * errors
 
 % The vector multiplication automatically includes calculating the sum of 
 % the products. So you do not need to use the "sum()" function separately.
@@ -50,16 +56,7 @@ for iter = 1:num_iters
 
 % theta = theta - theta_change;
 
-    x = X(:,2);
-    % cost = theta(1) + (theta(2)*x); % theta0 + theta1 * x
-    cost = X * theta
-
-    partial_ans = cost - y;
-
-    theta0 = theta(1) - alpha * (1/m) * sum(partial_ans);
-    theta1  = theta(2) - alpha * (1/m) * sum(partial_ans .* x);
-
-    theta = [theta0; theta1];
+    theta = theta -  theta_change
 
 
     % ============================================================

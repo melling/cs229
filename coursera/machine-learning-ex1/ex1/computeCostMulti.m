@@ -19,7 +19,7 @@ J = 0;
 %	2*m
     X
 	theta
-	h_theta = X .* theta
+	h_theta = X .* theta % hypothesis vector
 	h_minus_y = h_theta - y
 	h_minus_y_squared = (h_theta - y).^2
 	sum_sq = sum(h_minus_y_squared)
