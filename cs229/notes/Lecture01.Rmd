@@ -1,0 +1,45 @@
+---
+title: "CS229 Lecture 01"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+@28:30 diff b/w 229a and cs229 - not much overlap 
+
+
+http://cs229.stanford.edu
+
+@17m The homework questions are hard. Form study groups. 
+
+Using Octave/Matlab in 2009 but not 2018
+
+@32m Class material begins
+
+## Regression
+
+https://see.stanford.edu/materials/aimlcs229/cs229-notes1.pdf
+
+Supervised Learning - 1st Major Topic
+
+@43m SVM mentioned
+
+Point in **infinite dimensional space**
+
+- Learning Theory - 2nd Major Topic
+- Unsupervised Learning - 3rd  Major Topic
+
+### Cocktail Party Problem
+
+## Four Major Topics
+
+- Supervised Learning
+- Learning Theory
+- Unsupervised Learning 
+- Reinforcement Learning
+
+Reward functions are key in Reinforcement Learning

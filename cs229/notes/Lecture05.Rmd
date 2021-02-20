@@ -1,0 +1,59 @@
+---
+title: "CS229 Lecture 05"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Discriminative Learning Algorithms- everything discussed so far
+
+Learns p(y|x)
+
+Or learns function x->y directly 
+
+## Generative Learning Algorithms
+
+Logistic Regression is searching for a line to separate the two classes, positive and negative. Uses stochastic gradient descent. 
+
+- GL Doesn’t try to search for a line of separation. 
+- Looks at each class one at a time.  
+- Builds a model of what each class looks like, almost in isolation. 
+
+- Learn p(x|y) - opposite
+- Learns p(y) too - class prior
+
+## Bayes Rule
+
+@6m
+
+@7:40 Two examples of Generative learning algorithms discussed today
+
+- One for continuous value Tumor classification
+- One for discrete spam classification
+
+## Gaussian Discriminant Analysis GDA
+
+@8m
+
+Assume p(x|y) is Gaussian
+
+@9:50 Multivariate Gaussian
+
+Multiple RV’s at same time 
+
+- Make covariance matrix the identity matrix
+- Then change a little
+- Look at graphs
+- Integrates to 1 - all graphs here do
+
+Look at it in contours too
+Every covariance matrix is symmetric 
+
+@17 In Principal Component Analysis we talk about the eigenvectors of the covariance matrix. The principal directions in which it points. eigenvectors Point in the principal axes of the ellipse
+
+@18:50 GDA model:
+

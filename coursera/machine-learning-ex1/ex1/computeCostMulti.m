@@ -13,7 +13,18 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
+%mzz = zeros(1, size(X, 2)); % number columns
 
+%	m
+%	2*m
+    X
+	theta
+	h_theta = X .* theta
+	h_minus_y = h_theta - y
+	h_minus_y_squared = (h_theta - y).^2
+	sum_sq = sum(h_minus_y_squared)
+	denom = 2*m;
+	J = sum(h_minus_y_squared) / (2*m)
 
 
 

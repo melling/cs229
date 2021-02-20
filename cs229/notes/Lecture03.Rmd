@@ -1,0 +1,88 @@
+---
+title: "CS229 Lecture 03"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Locally Weighted Linear Regression 
+
+It’s non-parametric - amount of data/parameters you need to keep grows 
+
+In this case it grows linearly. Must keep data. 
+
+
+Parametric Learning Algorithm- fit fixed set of parameters. Can throw away the data after you calculate parameters 
+
+Bandwidth hyper parameter $\tau$
+
+Big or narrow window 
+
+tau has an effect on overfitting and underfitting 
+
+## Why the Squared Error?
+
+@21:40
+
+Discusses Gaussian normal
+
+Errors really aren’t independent in our housing example 
+
+Frequentist interpretation
+
+
+$\theta$ is not a random variable, it’s a parameter
+
+@32:50 difference between likelihood and probability 
+
+- Likelihood of the parameters 
+- Probability of the data
+- Likelihood of $\theta$
+
+Most error distributions are Gaussian
+$\epsilon$
+
+$l(\theta)= log L(\theta)$
+
+log likelihood 
+
+@38m MLE - Maximum Likelihood Estimation
+
+Choose $\theta$ to maximize likelihood. The probability of the data
+
+## Logistic Regression
+
+@46m
+
+## @59 Batch Gradient Ascent
+
+Trying to maximize log likelihood.  So we have a plus sign
+
+Uses sigmoid function g(0) = 0.5
+
+
+@1:03:30 Linear and Logistic regression equations are almost the same 
+
+Takes a lot of iterations to converge
+
+## Newton’s Method
+
+@1:05:30
+
+Takes fewer iterations to converge. Much bigger jumps. 
+
+ @1:14:45 Newton’s method has quadratic convergence. 
+
+### Hessian Matrix
+
+Slow in high dimensional problems
+
+good for 50 parameters 
+
+10k is too many
+
+

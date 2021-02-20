@@ -1,0 +1,83 @@
+---
+title: "CS229 Lecture 02"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+$\alpha$ is the learning rate
+
+- n = number parameters
+- m = number of rows of training examples ??? or is it n?
+
+@26m
+
+- In practice start the learning rate at 0.01
+- Especially if features are scaled 0 to 1 or -1 to 1
+
+—
+## Gradient Descent
+
+- @28m Partial derivative using Chain Rule
+- @30:30 The result is simply..
+- @32 sum the equations over all the training examples 
+- Derivative of the sum is the sum of the derivative. 
+
+- @33m Repeat until convergence 
+- Cost function: $J(\theta)$
+
+$J(\theta)$ turns out to be a quadratic function - sum of squares terms
+
+- Will always be a big bowl @34:25
+- No local optima, only global
+- Initialize theta to zero but it doesn’t matter much. 
+- @35:30 The direction of steepest descent is always 90 degrees, orthogonal, to the contour direction
+- @37 If cost function starts increasing, sign that learning rate is too large
+
+@41 It’s also called Batch Gradient Descent
+Look at all m examples, 49 here
+Look at the **entire batch**
+
+## Stochastic Gradient Descent
+@45
+
+Just fit once house instead of them all at once
+Much faster
+
+@47 Never quite converges
+
+@48:15 Mini-batch Gradient Descent - use 100 examples/houses - not discussed in course
+
+@50 what’s common is to slowly decrease the learning rate over time. Size of oscillations will decrease. 
+
+@53 With linear Regression it’s possible to jump to the optimal value of the parameters theta in 1 step. Only linear Regression
+
+@56m the notation to make derivation easier 
+Definition of a Matrix derivative
+
+@1:03:50 For square matrix A, the *trace* of A is the sum of the diagonals 
+
+Tr A
+Tr A = Tr A transposed o
+
+- @1:05 f(A) = tr AB
+- @1:06 tr AB = tr BA
+- tr ABC = tr CAB - always move 1 from end to beginning 
+
+@1:08 Express $J(\theta)$ in our matrix notation 
+
+Capital X is called the Design Matrix
+
+@1:12 Z^TZ = sum Z^2
+
+## The Normal Equations
+
+@1:16 The normal equations
+
+Can now in one step get the value of theta that corresponds to the global minimum 
+
+@1:17 If theta is not invertible use pseudo inverse or remove linearly dependent features. 

@@ -22,15 +22,15 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-    x = X(:,2);
-    cost = theta(1) + (theta(2)*x); % theta0 + theta1 * x
+    x = X(:,2); % Get column 2
+%    cost = theta(1) + (theta(2)*x); % theta0 + theta1 * x
+    cost = X * theta
+    partial_ans = cost - y;
 
-    partial_ans = cost - y
+    theta0 = theta(1) - alpha * (1/m) * sum(partial_ans);
+    theta1  = theta(2) - alpha * (1/m) * sum(partial_ans .* x);
 
-    theta0 = theta(1) - alpha * (1/m) * sum(partial_ans)
-    theta1  = theta(2) - alpha * (1/m) * sum(partial_ans .* x)
-
-    theta = [theta0; theta1]
+    theta = [theta0; theta1];
 
 
     % ============================================================
@@ -41,5 +41,5 @@ for iter = 1:num_iters
 end
     fprintf("\nJ_history ===\n")
 %    J_history(1:10,:)
-    J_history((end - 10):end,:) % Last 10 rows
+%    J_history((end - 10):end,:) % Last 10 rows
 end

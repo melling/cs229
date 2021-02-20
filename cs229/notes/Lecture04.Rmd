@@ -1,0 +1,107 @@
+---
+title: "CS229 Lecture 04"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Perceptron Algorithm
+
+Like the sigmoid function
+
+- 0, if it got it right 
+- 1, if wrong $y_i = 1$
+- -1, if wrong $y_i = 0$
+
+Marvin Minsky wrote a paper saying the perceptron is limited. 
+
+## Exponential Families
+
+@12:25 
+
+Closely related to GLM’s
+
+$p(y, \eta) = b(y) exp[.  ]$
+
+As long as this expression integrates to 1, you exponential family 
+
+- y - data
+- $\eta$ - natural parameter
+- T(y) - sufficient statistic
+- b(y) - base measure
+- $a(\eta)$ - log partition function
+
+
+@22:16 A couple of examples
+
+### Bernoulli (Binary data)
+
+$\phi$ = probability of event (phi)
+
+A mathematical way to write an ifelse
+
+We have verified that the Bernoulli distribution is a member of the exponential family 
+
+### Gaussian with fixed variance
+
+@28:25 
+
+Assume $\sigma^2=1$
+
+## Generalize Linear Models - GLM
+
+@36:25
+
+Natural extension of exponential family 
+
+GLM Training 
+
+@48:30
+
+Learning Update Rule is the same for all cases
+
+$\theta_j = \theta_+ $
+
+$\eta$ - natural parameter (eta)
+
+3 parameteritizations
+
+Model param
+
+Natural param
+
+Canonical param 
+
+Maximum Likelihood during learning 
+
+max log P() @47m
+
+[image:8EE2C851-24A7-48C4-9112-B2231FC7BF27-12627-0000275DCACB06A1/Photo Feb 18, 2021 at 80552 AM.jpg]
+
+[image:7DA47AC5-D085-47B4-B494-F502F476AF84-12627-0000275DD4C58B8B/Photo Feb 18, 2021 at 80559 AM.jpg]
+
+## Softmax Regression
+
+@1:08:30
+
+It’s doing cross entropy minimization
+
+Multi class classification 
+
+Label is One hot vector - each element indicates which class
+
+Logistic Regression had one theta - binary yes/no
+
+A theta for each class: $\theta_1, \theta_2, \ldots,\theta_m$
+
+Make all positive by using e
+
+Then Normalize between 0..1
+
+Minimize the  cross entropy between the two distributions @1:19:40
+
+
