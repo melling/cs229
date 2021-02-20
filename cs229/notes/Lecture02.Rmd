@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 $\alpha$ is the learning rate
 
 - n = number parameters
-- m = number of rows of training examples ??? or is it n?
+- m = number of rows of training examples - Changed in 2018 lectures?
 
 @26m
 

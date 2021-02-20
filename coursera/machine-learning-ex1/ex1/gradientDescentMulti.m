@@ -21,12 +21,17 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
+% Reminder that 'm' is the number of training examples (the rows of X), 
+% 'n' is the number of features (the columns of X). 
+% 'n' is also the size of the theta vector (n x 1).
+
+
 %   1 - The hypothesis is a vector, formed by multiplying the X matrix
 %   and the theta vector. X has size (m x n), and theta is (n x 1), 
 %   so the product is (m x 1). That's good, because 
 %   it's the same size as 'y'. Call this hypothesis vector 'h'.
 
-    h_theta = X * theta % hypothesis vector h_theta is cost fn
+    h_theta = X * theta; % hypothesis vector h_theta is cost fn
 
 
 % 2 - The "errors vector" is the difference between the 'h' vector 
@@ -35,13 +40,15 @@ for iter = 1:num_iters
     errors = h_theta - y;
 
 %  3 - The change in theta (the "gradient") is the sum of the product of X 
-%  and the "errors vector", scaled by alpha and 1/m. Since X is (m x n),
-%  and the error vector is (m x 1), and the result you want is the 
+%  and the "errors vector", 
+%  Scaled by alpha and 1/m.
+%  Since X is (m x n), and the error vector is (m x 1), and the result 
+%  you want is the 
 %  same size as theta (which is (n x 1), you need to transpose X 
 %  before you can multiply it by the error vector.
 
-    XT = X'
-    theta_change = XT * errors
+    XT = X';
+    theta_change = alpha * (XT * errors) / m;
 
 % The vector multiplication automatically includes calculating the sum of 
 % the products. So you do not need to use the "sum()" function separately.
@@ -56,7 +63,7 @@ for iter = 1:num_iters
 
 % theta = theta - theta_change;
 
-    theta = theta -  theta_change
+    theta = theta -  theta_change;
 
 
     % ============================================================

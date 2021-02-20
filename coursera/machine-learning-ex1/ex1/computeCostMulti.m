@@ -17,14 +17,13 @@ J = 0;
 
 %	m
 %	2*m
-    X
-	theta
-	h_theta = X .* theta % hypothesis vector
-	h_minus_y = h_theta - y
-	h_minus_y_squared = (h_theta - y).^2
-	sum_sq = sum(h_minus_y_squared)
-	denom = 2*m;
-	J = sum(h_minus_y_squared) / (2*m)
+	
+	h_theta = X * theta; % hypothesis vector
+	errors = h_theta - y;
+	errors_squared = (errors).^2;
+	% sum_sq = sum(errors_squared);
+	% denom = 2*m;
+	J = sum(errors_squared) / (2*m);
 
 
 
