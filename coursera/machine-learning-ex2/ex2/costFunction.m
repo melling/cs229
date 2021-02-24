@@ -24,16 +24,7 @@ grad = zeros(size(theta));
     hypothesis = sigmoid(h_theta);
     
     logh0 = (-y)' * log(hypothesis) - ((1 - y)' * log(1 - hypothesis))
-    % errors = hypothesis - y
-
-    % errors_squared = (errors).^2;
-
-    % XTerrors = (X' * errors)
-    % theta_change = (X' * errors) / m;
-    % theta_change = (X' * errors) / m
-    % answer = logh0 / m;
-    
-    
+ 
     grad = (X'*(hypothesis - y))/m
     
     J = logh0 / m
