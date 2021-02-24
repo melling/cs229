@@ -23,11 +23,11 @@ grad = zeros(size(theta));
     h_theta = X * theta;
     hypothesis = sigmoid(h_theta);
     
-    logh0 = (-y)' * log(hypothesis) - ((1 - y)' * log(1 - hypothesis))
+    logh0 = (-y)' * log(hypothesis) - ((1 - y)' * log(1 - hypothesis));
  
-    grad = (X'*(hypothesis - y))/m
+    grad = (X'*(hypothesis - y))/m;
     
-    J = logh0 / m
+    J = logh0 / m;
 
 
 
