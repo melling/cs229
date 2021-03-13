@@ -26,6 +26,10 @@ x = sigmoid(5);
 
 ## GUI
 
+```sh
+octave --gui &
+```
+
 - https://apple.stackexchange.com/questions/324996/octave-cant-start-gui-after-installing-from-homebrew
 
 ## Local Functions in Octave
