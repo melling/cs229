@@ -12,6 +12,11 @@
 sigmoid(0) = 0.5
 ```
 
+Add column of ones
+```octave
+Z = [ ones(rows(X),1) , X]
+```
+
 ## References
 
 - https://upscfever.com/upsc-fever/en/data/en-exercises-15.html
