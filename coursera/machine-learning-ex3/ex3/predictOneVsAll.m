@@ -32,15 +32,14 @@ X = [ones(m, 1) X];
 
 
 
-
-
-
-
 % =========================================================================
 
-z = X * all_theta'
+z = X * all_theta';
 
-[w iw] = max(z')
-p = iw'
+% Can skip the sigmod() because it's the same result
+
+[w iw] = max(z');
+
+p = iw';
 
 end
