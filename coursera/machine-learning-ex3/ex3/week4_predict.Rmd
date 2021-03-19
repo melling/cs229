@@ -90,3 +90,4 @@ p = predict(Theta1, Theta2, X)
 
 - [Programming Tutorials](https://www.coursera.org/learn/machine-learning/discussions/weeks/4/threads/miam5q2IEeWhLRIkesxXNw)
 - [Test Case](https://www.coursera.org/learn/machine-learning/discussions/all/threads/5g8LaZTCEeW0dw6k4EUmPw)
+- [predict.m](predict.m)
