@@ -39,6 +39,53 @@ Theta2_grad = zeros(size(Theta2));
 %         cost function computation is correct by verifying the cost
 %         computed in ex4.m
 %
+
+% Tutorial:
+% https://www.coursera.org/learn/machine-learning/programming/AiHgN/neural-network-learning/discussions/threads/QFnrpQckEeWv5yIAC00Eog
+
+% 1 - Expand the 'y' output values into a matrix of 
+% single values (see ex4.pdf/mlx Page 5). 
+% This is most easily done using an eye() matrix of 
+% size num_labels, with vectorized indexing by 'y'. 
+% A useful variable name would be "y_matrix", as this...
+
+X
+Theta1
+Theta2
+
+y_matrix = eye(num_labels)(y,:);
+y = y_matrix;
+
+
+% 1. Add a column of 1's to X (the first column), and it becomes 'a1'.
+a1 = [ones(m, 1) X]
+
+% 2. Multiply by Theta1 and you have 'z2'. 
+z2 = a1  * Theta1'
+
+% sigmoid(z2)
+% 3. Compute the sigmoid() of 'z2', then add a column of 1's, and it becomes 'a2'
+a2 = [ones(m, 1) sigmoid(z2)]
+
+% 4. Multiply by Theta2, compute the sigmoid() and it becomes 'a3'.
+
+% a2 * Theta2'
+
+a3 = sigmoid(a2 * Theta2')
+hypothesis = a3;
+% h_theta = X * Theta;
+% hypothesis = sigmoid(h_theta);
+    
+logh0 = (-y)' * log(hypothesis) - ((1 - y)' * log(1 - hypothesis))
+ 
+grad = (X'*(hypothesis - y))/m
+    
+J = logh0 / m
+
+[w iw] = max(J')
+J = sum(w(1:end))
+
+% J = sum(J);
 % Part 2: Implement the backpropagation algorithm to compute the gradients
 %         Theta1_grad and Theta2_grad. You should return the partial derivatives of
 %         the cost function with respect to Theta1 and Theta2 in Theta1_grad and

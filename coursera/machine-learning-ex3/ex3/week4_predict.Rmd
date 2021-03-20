@@ -86,6 +86,19 @@ p = predict(Theta1, Theta2, X)
 %    0.54882   0.55033   0.54738   0.54021
 ```
 
+```{python}
+import numpy as np
+
+a = np.arange(15).reshape(3, 5)
+a
+```
+
+```{python}
+import scipy.io as sio
+sio.loadmat("ex3data1.mat")
+np.ones( (2,3,4), dtype=np.int16 )
+```
+
 # References
 
 - [Programming Tutorials](https://www.coursera.org/learn/machine-learning/discussions/weeks/4/threads/miam5q2IEeWhLRIkesxXNw)
