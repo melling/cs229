@@ -2,6 +2,9 @@
 % Test Case: 
 % https://www.coursera.org/learn/machine-learning/discussions/weeks/5/threads/uPd5FJqnEeWWpRIGHRsuuw
 
+clc;
+output_precision(8);
+
 il = 2;              % input layer
 hl = 2;              % hidden layer
 nl = 4;              % number of labels

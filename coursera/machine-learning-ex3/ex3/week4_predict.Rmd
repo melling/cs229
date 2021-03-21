@@ -96,7 +96,7 @@ a
 ```{python}
 import scipy.io as sio
 sio.loadmat("ex3data1.mat")
-np.ones( (2,3,4), dtype=np.int16 )
+#np.ones( (2,3,4), dtype=np.int16 )
 ```
 
 # References

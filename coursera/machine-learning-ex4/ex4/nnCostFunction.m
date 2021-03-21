@@ -49,41 +49,59 @@ Theta2_grad = zeros(size(Theta2));
 % size num_labels, with vectorized indexing by 'y'. 
 % A useful variable name would be "y_matrix", as this...
 
-X
-Theta1
-Theta2
-
 y_matrix = eye(num_labels)(y,:);
 y = y_matrix;
 
 
 % 1. Add a column of 1's to X (the first column), and it becomes 'a1'.
-a1 = [ones(m, 1) X]
+a1 = [ones(m, 1) X];
 
 % 2. Multiply by Theta1 and you have 'z2'. 
-z2 = a1  * Theta1'
+% z : is the result of multiplying a data vector with a Θ matrix.
+% A typical variable name would be "z2
+z2 = a1  * Theta1';
 
 % sigmoid(z2)
 % 3. Compute the sigmoid() of 'z2', then add a column of 1's, and it becomes 'a2'
-a2 = [ones(m, 1) sigmoid(z2)]
+% a2 - activation layer 2 output
+a2 = [ones(m, 1) sigmoid(z2)];
 
 % 4. Multiply by Theta2, compute the sigmoid() and it becomes 'a3'.
 
-% a2 * Theta2'
+z3 = a2 * Theta2';
 
-a3 = sigmoid(a2 * Theta2')
+% a2 - activation layer 3 output
+a3 = sigmoid(z3);
 hypothesis = a3;
+
 % h_theta = X * Theta;
 % hypothesis = sigmoid(h_theta);
+delta3 = a3 - y
+size(Theta2)
+size(delta3)
+sg = sigmoidGradient(z2)
+sg
+% delta2 = (delta3 * Theta2) * sigmoidGradient(z2)
     
-logh0 = (-y)' * log(hypothesis) - ((1 - y)' * log(1 - hypothesis))
+logh0 = (-y)' * log(hypothesis) - ((1 - y)' * log(1 - hypothesis));
  
-grad = (X'*(hypothesis - y))/m
-    
-J = logh0 / m
+grad = (X'*(hypothesis - y))/m;
 
-[w iw] = max(J')
-J = sum(w(1:end))
+% δ : lower-case delta is used for the "error" term in each layer. 
+ %A typical variable name would be "d2"    
+J = logh0 / m;
+
+theta_t1 = Theta1;
+theta_t1(1) = 0;
+
+theta_t2 = Theta2;
+theta_t2(1) = 0;
+reg1 = lambda * sum(theta_t1 .^ 2) / (2 * m);
+reg2 = lambda * sum(theta_t2 .^ 2) / (2 * m);
+
+% [w iw] = max(J');
+
+J = trace(J);
 
 % J = sum(J);
 % Part 2: Implement the backpropagation algorithm to compute the gradients

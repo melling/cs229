@@ -46,11 +46,47 @@ A note regarding bias units, regularization, and back-propagation:
 
 There are two methods for handing exclusion of the bias units in the Theta matrices in the back-propagation and gradient calculations. I've described only one of them here, it's the one that I understood the best. Both methods work, choose the one that makes sense to you and avoids dimension errors. It matters not a whit whether the bias unit is excluded before or after it is calculated - both methods give the same results, though the order of operations and transpositions required may be different. Those with contrary opinions are welcome to write their own tutorial. 
 
+# Test Results for Unregulated Case
 
-# tutorial for backpropagation
+```
+a2 =
+   1.00000   0.51350   0.54151
+   1.00000   0.37196   0.35705
+   1.00000   0.66042   0.70880
+
+a3 =
+   0.88866   0.90743   0.92330   0.93665
+   0.83818   0.86028   0.87980   0.89692
+   0.92341   0.93858   0.95090   0.96085
+
+d3 =
+   0.888659   0.907427   0.923305  -0.063351
+   0.838178  -0.139718   0.879800   0.896918
+   0.923414   0.938578  -0.049102   0.960851
+
+d2 =
+   0.79393   1.05281
+   0.73674   0.95128
+   0.76775   0.93560
+
+Delta1/m =
+   0.766138  -0.027540  -0.024929
+   0.979897  -0.035844  -0.053862
+
+Delta2/m =
+   0.88342   0.45931   0.47834
+   0.56876   0.34462   0.36892
+   0.58467   0.25631   0.25977
+   0.59814   0.31189   0.32233
+```
 
 
+
+# Tutorial for backpropagation
+
+[Backpropagation Implementation Discussion](https://www.coursera.org/learn/machine-learning/discussions/all/threads/cfIooMsjEemH9w4Og_zfOg)
+- [Computing the NN cost J using the matrix product](https://www.coursera.org/learn/machine-learning/discussions/all/threads/AzIrrO7wEeaV3gonaJwAFA)
 # References
 
 - [Programming Tutorials](https://www.coursera.org/learn/machine-learning/discussions/weeks/4/threads/Hfo82qxTEeWjcBKYJq1ZMQ)
-- [Test Case](https://www.coursera.org/learn/machine-learning/discussions/all/threads/5g8LaZTCEeW0dw6k4EUmPw)
+- [Test Case](https://www.coursera.org/learn/machine-learning/discussions/weeks/5/threads/uPd5FJqnEeWWpRIGHRsuuw)

@@ -2,6 +2,9 @@
 % Test Case: 
 % https://www.coursera.org/learn/machine-learning/discussions/weeks/5/threads/uPd5FJqnEeWWpRIGHRsuuw
 
+clc;
+output_precision(6);
+
 il = 2;              % input layer
 hl = 2;              % hidden layer
 nl = 4;              % number of labels
@@ -11,9 +14,7 @@ y = [4; 2; 3];
 
 lambda = 0; % Unregularized
 % [J grad] = nnCostFunction(nn, il, hl, nl, X, y, lambda)
-[J grad] = nnCostFunction(nn, il, hl, nl, X, y, 0) 
-
-% J=7.4070
+[J grad] = nnCostFunction(nn, il, hl, nl, X, y, 0) % J=7.4070
 
 % grad =
 %    0.766138
@@ -34,3 +35,4 @@ lambda = 0; % Unregularized
 %    0.368920
 %    0.259771
 %    0.322331
+
