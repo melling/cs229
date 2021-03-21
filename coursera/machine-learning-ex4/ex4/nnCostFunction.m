@@ -96,13 +96,14 @@ theta_t1(1) = 0;
 
 theta_t2 = Theta2;
 theta_t2(1) = 0;
-reg1 = lambda * sum(theta_t1 .^ 2) / (2 * m);
-reg2 = lambda * sum(theta_t2 .^ 2) / (2 * m);
+reg1 = lambda * sum(sum(theta_t1 .^ 2)) / (2 * m)
+reg2 = lambda * sum(sum(theta_t2 .^ 2)) / (2 * m)
 
 % [w iw] = max(J');
 
-J = trace(J);
-
+tracer = trace(J)
+totalCost = tracer + reg1 + reg2
+J = totalCost
 % J = sum(J);
 % Part 2: Implement the backpropagation algorithm to compute the gradients
 %         Theta1_grad and Theta2_grad. You should return the partial derivatives of
