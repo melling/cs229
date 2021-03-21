@@ -50,7 +50,7 @@ Theta2_grad = zeros(size(Theta2));
 % A useful variable name would be "y_matrix", as this...
 
 y_matrix = eye(num_labels)(y,:);
-y = y_matrix;
+y = y_matrix
 
 
 % 1. Add a column of 1's to X (the first column), and it becomes 'a1'.
@@ -76,33 +76,40 @@ hypothesis = a3;
 
 % h_theta = X * Theta;
 % hypothesis = sigmoid(h_theta);
-delta3 = a3 - y
-size(Theta2)
-size(delta3)
-sg = sigmoidGradient(z2)
-sg
-% delta2 = (delta3 * Theta2) * sigmoidGradient(z2)
-    
+d3 = a3 - y
+sig = sigmoidGradient(z2)
+
+theta2_size = size(Theta2)
+d3_size = size(d3)
+sig_size = size(sig)
+
+d2 = (d3 * Theta2)' * sigmoidGradient(z2)
+% Transpose: (d3 * Theta2)'
+% d2_1 = (Theta2 * d3) * sigmoidGradient(z2)
+
 logh0 = (-y)' * log(hypothesis) - ((1 - y)' * log(1 - hypothesis));
  
 grad = (X'*(hypothesis - y))/m;
 
 % δ : lower-case delta is used for the "error" term in each layer. 
- %A typical variable name would be "d2"    
+% A typical variable name would be "d2"    
 J = logh0 / m;
 
-theta_t1 = Theta1;
-theta_t1(1) = 0;
+theta_t1 = Theta1
+theta_t1(:,1) = 0
 
-theta_t2 = Theta2;
-theta_t2(1) = 0;
+theta_t2 = Theta2
+theta_t2(:,1) = 0
+
 reg1 = lambda * sum(sum(theta_t1 .^ 2)) / (2 * m)
 reg2 = lambda * sum(sum(theta_t2 .^ 2)) / (2 * m)
-
+% reg3_0 = sum(sum(theta_t2 .^ 2)) + sum(sum(theta_t1 .^ 2))
+% reg3 = lambda * reg3_0 / (2 * m)
 % [w iw] = max(J');
 
 tracer = trace(J)
 totalCost = tracer + reg1 + reg2
+% totalCost0 = tracer + reg3
 J = totalCost
 % J = sum(J);
 % Part 2: Implement the backpropagation algorithm to compute the gradients
@@ -127,22 +134,6 @@ J = totalCost
 %               the regularization separately and then add them to Theta1_grad
 %               and Theta2_grad from Part 2.
 %
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

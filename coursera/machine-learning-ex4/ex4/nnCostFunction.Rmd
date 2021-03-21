@@ -49,6 +49,8 @@ There are two methods for handing exclusion of the bias units in the Theta matri
 # Test Results for Unregulated Case
 
 ```
+J=7.4070
+
 a2 =
    1.00000   0.51350   0.54151
    1.00000   0.37196   0.35705
