@@ -74,6 +74,9 @@ z3 = a2 * Theta2';
 a3 = sigmoid(z3);
 hypothesis = a3;
 
+% Backpropigation Tutorial
+% https://www.coursera.org/learn/machine-learning/discussions/all/threads/a8Kce_WxEeS16yIACyoj1Q
+
 % h_theta = X * Theta;
 % hypothesis = sigmoid(h_theta);
 d3 = a3 - y
@@ -105,8 +108,11 @@ theta_t2(:,1) = 0
 Delta1 = d2' * a1
 Delta2 = d3' * a2
 
-Theta1_grad = Delta1 / m
-Theta2_grad = Delta2 / m
+scale_theta1 = (lambda * theta_t1) / m
+scale_theta2 = (lambda * theta_t2) / m
+
+Theta1_grad = (Delta1 / m) + scale_theta1
+Theta2_grad = (Delta2 / m) + scale_theta2
 % Delta1 = a1 * (d3 * Theta2)' * sigmoidGradient(a2) % d2
 % Delta2 = Delta2 + delta3 * a2'
 
