@@ -83,7 +83,8 @@ theta2_size = size(Theta2)
 d3_size = size(d3)
 sig_size = size(sig)
 
-d2 = (d3 * Theta2)' * sigmoidGradient(z2)
+% d2 = (d3 * Theta2)' * sigmoidGradient(z2)
+d2 = (d3 * Theta2(:,2:end)) .* sigmoidGradient(z2)
 % Transpose: (d3 * Theta2)'
 % d2_1 = (Theta2 * d3) * sigmoidGradient(z2)
 
@@ -100,6 +101,14 @@ theta_t1(:,1) = 0
 
 theta_t2 = Theta2
 theta_t2(:,1) = 0
+
+Delta1 = d2' * a1
+Delta2 = d3' * a2
+
+Theta1_grad = Delta1 / m
+Theta2_grad = Delta2 / m
+% Delta1 = a1 * (d3 * Theta2)' * sigmoidGradient(a2) % d2
+% Delta2 = Delta2 + delta3 * a2'
 
 reg1 = lambda * sum(sum(theta_t1 .^ 2)) / (2 * m)
 reg2 = lambda * sum(sum(theta_t2 .^ 2)) / (2 * m)
