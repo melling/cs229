@@ -39,13 +39,29 @@ error_val = zeros(length(lambda_vec), 1);
 %
 %
 
+    for i = 1:length(lambda_vec)
+          lambda = lambda_vec(i);
+          theta = trainLinearReg(X,y, lambda);
+
+% Why does setting lambda to zero work?  BUG! FIXME
+          [J g] = linearRegCostFunction(X, y, theta, 0);
+
+          error_train(i) = J;
+% Why does setting lambda to zero work?  BUG! FIXME
+          [J g] = linearRegCostFunction(Xval, yval, theta, 0);
+
+          error_val(i) = J;
+    end
 
 
 
+    % theta = trainLinearReg(X1,y1, lambda);
 
+    % [J g] = linearRegCostFunction(X1, y1, theta, 0);
+    % error_train(i) = J;
+    % [J g] = linearRegCostFunction(Xval, yval, theta, 0);
 
-
-
+    % error_val(i) = J;
 
 
 % =========================================================================

@@ -1,6 +1,7 @@
 
 % https://www.coursera.org/learn/machine-learning/discussions/all/threads/w7-BWWbLEeWjjQ6zloxUzw
 
+clear all;clc;
 X = [1 2 ; 1 3 ; 1 4 ; 1 5];
 y = [8 ; 7 ; 3 ; 2];
 Xval = [1 7 ; 1 -2];
@@ -33,6 +34,7 @@ yval = [2 12]';
 %    0.65039
 %    1.56944
 
+
 % error_val =
 
 %    12.02500
@@ -46,4 +48,3 @@ yval = [2 12]';
 %     0.90039
 %     2.24722
 
-% >>
