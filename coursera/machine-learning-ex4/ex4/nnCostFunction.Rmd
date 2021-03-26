@@ -92,3 +92,4 @@ Delta2/m =
 
 - [Programming Tutorials](https://www.coursera.org/learn/machine-learning/discussions/weeks/4/threads/Hfo82qxTEeWjcBKYJq1ZMQ)
 - [Test Case](https://www.coursera.org/learn/machine-learning/discussions/weeks/5/threads/uPd5FJqnEeWWpRIGHRsuuw)
+- [Step by Step Backpropagation Example](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/)

@@ -23,7 +23,7 @@ for iter = 1:num_iters
     %
 
     x = X(:,2); % Get column 2
-%    cost = theta(1) + (theta(2)*x); % theta0 + theta1 * x
+
     h_theta = X * theta % hypothesis vector h_theta is cost fn
     errors = h_theta - y;
 
