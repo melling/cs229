@@ -23,16 +23,19 @@ grad = zeros(size(theta));
 % v = [1 ; 2 ;3]
 % sum(v.^2)
 % v'*v
-
+printf("====================== BEGIN ======================")
 % X
 % y
-% theta
+theta
 % lambda
+% m
 
 h_theta = X * theta;
 
 theta(1) = 0;
 
+% theta_sum_of_sq = sum(theta.^2)
+% Theta sum of squares * lambda/2m
 reg_term = lambda * (theta' * theta) / (2*m);
 
 errors = (h_theta - y);
@@ -53,8 +56,10 @@ errors1 = X' * errors
 errors2 = errors1 ./ m
 
 theta_change = (X' * errors)/m
+lambda_div_m = lambda / m
+theta_reg_term = lambda_div_m .* theta
 
-grad = theta_change
+grad = theta_change .+ theta_reg_term
 
 % =========================================================================
 
