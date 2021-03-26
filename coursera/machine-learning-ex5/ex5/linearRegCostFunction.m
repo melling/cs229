@@ -23,10 +23,10 @@ grad = zeros(size(theta));
 % v = [1 ; 2 ;3]
 % sum(v.^2)
 % v'*v
-printf("====================== BEGIN ======================")
+
 % X
 % y
-theta
+% theta
 % lambda
 % m
 
@@ -52,14 +52,14 @@ J = errors_sq / (2*m) + reg_term;
 % Since X is (m x n), and the error vector is (m x 1),
 % and the result you want is the same size as theta (which is (n x 1),
 % you need to transpose X before you can multiply it by the error vector.
-errors1 = X' * errors
-errors2 = errors1 ./ m
+errors1 = X' * errors;
+errors2 = errors1 ./ m;
 
-theta_change = (X' * errors)/m
-lambda_div_m = lambda / m
-theta_reg_term = lambda_div_m .* theta
+theta_change = (X' * errors)/m;
+lambda_div_m = lambda / m;
+theta_reg_term = lambda_div_m .* theta;
 
-grad = theta_change .+ theta_reg_term
+grad = theta_change .+ theta_reg_term;
 
 % =========================================================================
 
