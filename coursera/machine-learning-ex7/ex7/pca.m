@@ -20,8 +20,8 @@ S = zeros(n);
 %       number of examples).
 %
 
-covm = (X' * X) ./m
-[U S V] = svd(covm)
+covm = (X' * X) ./m;
+[U S V] = svd(covm);
 
 
 % =========================================================================
