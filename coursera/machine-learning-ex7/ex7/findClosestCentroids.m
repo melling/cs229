@@ -20,10 +20,19 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
+distance = zeros(size(X))
 
+for row = 1:K
+    D = bsxfun(@minus, X(row,:), centroids)
+    j0 = sum(D,2)
+    j = sum(D.^2,2) % 2 means sum by row
+    % distance(iter, :) = x'
+    distance
+    
+end
 
-
-
+% idx(iter) = x
+% idx = 1
 
 
 

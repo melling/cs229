@@ -13,9 +13,24 @@ centroids = zeros(K, size(X, 2));
 %               the dataset X
 %
 
+% Use code from FAQ
+% https://www.coursera.org/learn/machine-learning/discussions/weeks/8/threads/XLl24URmEea1pw5frt5utw
 
+% create a matrix of only the unique rows
+X_unq = unique(X, 'rows');
 
+% create a random permutation of the rows  
+randidx = randperm(size(X_unq, 1));
 
+% take the first K rows as centroids
+centroids = X_unq(randidx(1:K), :);
+
+% Initialize the centroids to be random examples
+% Randomly reorder the indices of examples
+% From ex7.pdf
+% randidx = randperm(size(X, 1));
+% Take the first K examples as centroids
+% centroids = X(randidx(1:K), :);
 
 
 
