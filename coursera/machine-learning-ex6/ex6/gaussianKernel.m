@@ -21,7 +21,7 @@ sim = 0;
 % Compute the kernel
 % sim = x1' * x2;  % dot product
 xdiff = x1 - x2;
-sos = xdiff' * xdiff;
+sos = xdiff' * xdiff; % X'X = sum(x.^2)
 a1 = sos / (2 * sigma^2);
 
 sim = exp(-a1);
