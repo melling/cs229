@@ -99,8 +99,8 @@ while ~isempty(email_contents)
 
 
 % small_list = {'alpha', 'bravo', 'charlie', 'delta', 'echo'}
-    match = strcmp(str, vocabList)
-    v = find(match)
+    match = strcmp(str, vocabList);
+    v = find(match);
 
     word_indices = [word_indices; v];
     % =============================================================
@@ -116,6 +116,7 @@ while ~isempty(email_contents)
 
 end
 
+word_indices = word_indices';
 % Print footer
 fprintf('\n\n=========================\n');
 
