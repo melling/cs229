@@ -22,12 +22,10 @@ sigma2 = zeros(n, 1);
 %
 
 
+mu = mean(X);
+X_norm = bsxfun(@minus, X, mu);
 
-
-
-
-
-
+sigma2 = var(X_norm,1);
 
 
 % =============================================================
