@@ -21,6 +21,18 @@ X_rec = zeros(size(Z, 1), size(U, 1));
 %               Notice that U(j, 1:K) is a row vector.
 %               
 
+% Return X_rec, the product of Z and the first 'K' columns of U. 
+
+% Dimensional analysis:
+
+% - The original data set was size (m x n)
+% - Z is size (m x K), where 'K' is the number of features we retained.
+% - U is size (n x n), where 'n' is the number of features in the original set.
+% So "U(:,1:K)" is size (n x K).
+
+% m = size(Z,1);
+
+X_rec = Z * U(:, 1:K)'; % 
 
 
 % =============================================================

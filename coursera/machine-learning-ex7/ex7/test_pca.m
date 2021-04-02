@@ -12,6 +12,7 @@
 %    0        0.22019
 
 % ========== projectData() ============ 
+clear all; clc;
 X = sin(reshape([0:11],4,3));
 projectData(X, magic(3), 2)
 
@@ -24,8 +25,14 @@ projectData(X, magic(3), 2)
    
 
 % ========== recoverData() ============  
+clear all; clc;
 Q = reshape([1:15],5,3);
 recoverData(Q, magic(5), 3)
+
+Z = Q
+U = magic(5)
+K = 3
+Z * U(:, 1:K)
 
 % % result
 % ans =
