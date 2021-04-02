@@ -32,7 +32,7 @@ recoverData(Q, magic(5), 3)
 Z = Q
 U = magic(5)
 K = 3
-Z * U(:, 1:K)
+Z * U(:, 1:K) % 
 
 % % result
 % ans =
