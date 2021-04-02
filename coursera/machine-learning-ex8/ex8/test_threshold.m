@@ -1,6 +1,7 @@
 
 % Test 2a (Select threshold):
 % input:
+clear all;clc;
 [epsilon F1] = selectThreshold([1 0 0 1 1]', [0.1 0.2 0.3 0.4 0.5]')
 % output:
 % epsilon =  0.40040
