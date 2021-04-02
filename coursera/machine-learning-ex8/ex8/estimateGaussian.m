@@ -7,7 +7,6 @@ function [mu sigma2] = estimateGaussian(X)
 %   and the variances sigma^2, an n x 1 vector
 % 
 
-% Useful variables
 [m, n] = size(X);
 
 % You should return these values correctly
@@ -21,6 +20,9 @@ sigma2 = zeros(n, 1);
 %               should contain variance of the i-th feature.
 %
 
+% Same code from ex7/featureNormalize.m 
+
+% Useful variables
 
 mu = mean(X);
 X_norm = bsxfun(@minus, X, mu);
