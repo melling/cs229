@@ -49,12 +49,20 @@ error_factor = MovieRatingError .* R % unrated movies = 0
 % Calculate the Cost
 J = sum(sum(error_factor .^2, 2)/2)
 
+reg_thetas = lambda * sum(sum(Theta .^ 2)) / 2
+reg_xs = lambda * sum(sum(X .^ 2)) / 2
+
+J = J + reg_thetas + reg_xs
+
 X_grad = error_factor * Theta
 Theta_grad = error_factor' * X
 
+% X_grad_reg = X .* (lambda/2)
+X_grad_reg = X .* lambda
+Theta_grad_reg = Theta .* lambda
 
-
-
+X_grad = X_grad + X_grad_reg
+Theta_grad = Theta_grad + Theta_grad_reg
 
 
 
