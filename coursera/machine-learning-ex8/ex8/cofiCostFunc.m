@@ -42,6 +42,16 @@ Theta_grad = zeros(size(Theta));
 
 
 
+PredMoveRatings = X * Theta'
+MovieRatingError = PredMoveRatings - Y
+error_factor = MovieRatingError .* R % unrated movies = 0
+
+% Calculate the Cost
+J = sum(sum(error_factor .^2, 2)/2)
+
+X_grad = error_factor * Theta
+Theta_grad = error_factor' * X
+
 
 
 
