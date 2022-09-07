@@ -14,3 +14,7 @@ I've create 4 separate subdirectories. One for each class, and a separate direct
 - [CS229](cs229/README.md)
 - [CS229t](cs229t/README.md)
 - [Coursera](coursera/README.md)
+
+## Resources
+
+- [CS229 Cheatsheets](https://github.com/afshinea/stanford-cs-229-machine-learning)
